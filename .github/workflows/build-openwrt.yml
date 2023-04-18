@@ -95,6 +95,7 @@ jobs:
         cd openwrt
         make defconfig
         make download -j8
+        pip3 install pyelftools
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
