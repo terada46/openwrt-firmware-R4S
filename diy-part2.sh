@@ -12,3 +12,10 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
+
+# Check if Default IP address successfully modified
+if grep "192.168.11.1" package/base-files/files/bin/config_generate; then
+    echo "Default IP address modified successfully."
+else
+    echo "Failed to modify default IP address."
+fi
